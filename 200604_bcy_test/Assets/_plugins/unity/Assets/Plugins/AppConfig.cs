@@ -4,7 +4,7 @@
 static class AppConfig
 {
     public static string AppUrl              = "wss://localhost:6868";
-    public static string AppName             = "UnityApp";
+    public static string AppName             = "lucid-dream";
     
     /// <summary>
     /// Name of directory where contain tmp data and logs file.
