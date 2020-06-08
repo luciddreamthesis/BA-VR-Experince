@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using EmotivUnityPlugin;
 using Zenject;
 
+ using System.Collections;
+ using UnityEngine.SceneManagement;
+
 namespace dirox.emotiv.controller
 {
     /// <summary>
@@ -96,7 +99,7 @@ namespace dirox.emotiv.controller
                 }
                 
             }
-            
+             SceneManager.LoadScene (sceneName:"SampleScene");
         }
 
         public override void Activate()
