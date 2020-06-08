@@ -34,6 +34,7 @@ namespace dirox.emotiv.controller
                 return;
 
             _timerDataUpdate -= TIME_UPDATE_DATA;
+            Debug.Log("Time update: " + _timerDataUpdate);
 
             // update EEG data
             if (DataStreamManager.Instance.GetNumberEEGSamples() > 0) {
@@ -68,8 +69,11 @@ namespace dirox.emotiv.controller
                 motHeader.text  = motHeaderStr;
                 motData.text    = motDataStr;
             }
+            Debug.Log("Check before pm.");
+            Debug.Log("Number PM Samples: " + DataStreamManager.Instance.GetNumberPMSamples());
             // update pm data
             if (DataStreamManager.Instance.GetNumberPMSamples() > 0) {
+                
                 string pmHeaderStr = "Performance metrics Header: ";
                 string pmDataStr   = "Performance metrics Data: ";
                 bool hasPMUpdate = true;
@@ -84,6 +88,7 @@ namespace dirox.emotiv.controller
                     }
                     pmHeaderStr    += chanStr + ", ";
                     pmDataStr      +=  data.ToString() + ", ";
+                    Debug.Log("Check: test" + System.DateTime.Now.ToString("hh:mm:ss"));
                 }
                 if (hasPMUpdate) {
                     pmHeader.text  = pmHeaderStr;
